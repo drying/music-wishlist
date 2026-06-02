@@ -2,3 +2,5 @@ venv/
 __pycache__/
 *.pyc
 wishlist.db
+CLAUDE.md
+.claude/
