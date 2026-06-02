@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/drying/Library/CloudStorage/Dropbox/KnowledgeDB/3. Resources/AI/Preferences/**)",
+      "Read(//Users/drying/Library/CloudStorage/Dropbox/KnowledgeDB/1. Project/music-wishlist/**)"
+    ]
+  }
+}
