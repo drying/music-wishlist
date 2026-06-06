@@ -112,11 +112,11 @@
 
     const formatBadge = f => {
       const map = { CD: 'badge-cd', Digital: 'badge-digital', Vinyl: 'badge-vinyl' };
-      return `<span class="badge ${map[f] || 'badge-cd'}">${f}</span>`;
+      return `<span class="badge ${map[f] || 'badge-cd'}">${esc(f)}</span>`;
     };
     const statusBadge = s => {
       const map = { want: ['badge-want', '欲しい'], bought: ['badge-bought', '購入済'], skip: ['badge-skip', 'スキップ'] };
-      const [cls, label] = map[s] || ['badge-want', s];
+      const [cls, label] = map[s] || ['badge-want', esc(s)];
       return `<span class="badge ${cls}">${label}</span>`;
     };
 
@@ -157,7 +157,12 @@
 
     function esc(s) {
       if (!s) return '';
-      return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+      return s.replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;')
+              .replace(/'/g, '&#x27;')
+              .replace(/\//g, '&#x2F;');
     }
 
     async function addItem() {
